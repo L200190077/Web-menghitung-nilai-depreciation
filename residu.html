@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Metode Residu Balance</title>
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="shortcut icon" href="garis.png">
+</head>
+
+<body>
+  <div class="container-fluid mw-100 mh-100 bg-dark" style="border:0;margin-bottom:-1500px;padding-bottom:1px;">
+	<form action="javascript:count()">
+	  <div class="card mb-3 mw-100 mh-100 bg-dark" style="border:0">
+		<div class="card mt-3 mw-100 mh-100 text-white bg-dark" style="border:0">
+		  <center><h3>Depreciation - Metode Residu Balance</h3></center>
+		</div>
+
+  <div class="card-body mw-100 mh-100 text-black bg-dark" style="border:0">
+	<div class="row mb-2 mw-100 mh-100" style="border:0">
+	  <div class="col-md-12 col-lg-12 text-center">
+		<p class="text-secondary text-light	">Anggota Kelompok	:<br>
+			Anas Faridrahman (L200190068)<br>
+			Syarifatul Daimahtul Fatiyyah (L200190077)
+		</p>
+		  </div>
+	   </div>
+	
+
+<!-- Metode Residu Balance-->
+
+	<div class="row mb-4">
+		<div class="col-lg-12 col-sm-12">
+			<div class="card" style="border:0">
+		  		<div class="card-header bg-dark text-white">
+					<center><u><h4>Metode Residu Balance</h4></u></center>
+	</div>
+									
+		
+	<div class="card-body bg-dark">
+		<div class="row mb-1">
+			<div class="col-6">
+				<div class="text-left text-white">
+						Net Book Value
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="input-group text">
+					<input id="satu" type="number" pattern="netBook"
+						title="Isi kolom tanpa pemisah angka ribuan" min="0" maxlength="20" class="form-control" placeholder="Masukkan nilai pendapatan bersih">
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="row mb-1">
+			<div class="col-6">
+				<div class="text-left text-white">
+						Nilai Residu
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="input-group text">
+					<input id="dua" type="number" pattern="residu"
+						title="Isi kolom tanpa pemisah angka ribuan" min="0" maxlength="20" class="form-control" placeholder="Masukkan nilai residu">
+				</div>
+			</div>
+			
+		</div>
+		<div class="row mb-1">
+			<div class="col-6">
+				<div class="text-left text-white">
+						Rate
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="input-group text">
+					<input id="tiga" type="number" pattern="rate"
+						title="Isi kolom tanpa simbol % (persen)" min="0" maxlength="20" class="form-control" placeholder="Masukkan nilai rate">
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="text-right text-white">
+						*semua kolom wajib diisi
+				</div>
+			</div>
+		</div>
+		</div>
+        </div>
+	</div>
+</div>
+
+            <div class="row text-left">
+                <div class="col-sm-12 text-left"></div></div>
+                    <center><button class="btn btn-lg btn-block btn-warning" style="width:400px"; 
+                        type="submit"><h5>Hitung Beban Depresiasi</h5></button></center>
+    </div>
+    <div class="card-footer bg-light text-black mt-2">
+		<center><h5 id="result">Total Nilai Depresiasi : 0</h5></center>
+		</div>
+    <div class="row mt-4 text-left">
+        <div class="col-sm-12 text-left"></div></div>
+		<center><button class="btn btn-lg btn-block btn-warning" style="width:300px" onclick="location.href='index.html'"><h5>Gunakan Metode Lainnya</h5></button></center>
+				</div>
+				
+</form>
+				<script type="text/javascript">
+					// Calculation
+					function count(){
+				
+						var satu = document.getElementById('satu').value;
+						var dua = document.getElementById('dua').value;
+						var tiga = document.getElementById('tiga').value;
+					
+						var netBook = parseFloat(satu);
+						var residu = parseFloat(dua);
+						var rate = parseFloat(tiga);
+
+                        var result = (netBook-residu)*(rate/100);
+		
+					// Output
+					document.getElementById("result").innerHTML = "Total Nilai Depresiasi : " + (result);
+				
+				
+					}
+					
+				</script>
+				</body>
+				</html>
